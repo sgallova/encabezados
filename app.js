@@ -1,16 +1,12 @@
 const express = require('express');
 const app = express();
 const parser = require('ua-parser-js');
-let msg='';
-
 
 app.get('/',(req,res) =>{
-    var ua = parser(req.headers['user-agent']);
-    if(ua.browser.name=== ''){
-        res.send('mi-super-navegador');
-    }else{
-    res.send(ua.browser.name);
-    }
+    /*var ua = parser(req.headers['user-agent']);
+    res.send(ua.browser.name);*/
+
+    res.send(req.headers['user-agent']);
 });
 
 
